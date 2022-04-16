@@ -20,8 +20,8 @@
     </v-navigation-drawer>
     <v-app-bar fixed app flat color="transparent">
       <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer"
         class="hidden-lg-and-up"
+        @click.stop="drawer = !drawer"
       />
       <nuxt-link :to="{ name: 'index' }"
         ><v-img
@@ -35,7 +35,7 @@
         <nuxt-link :to="{ name: 'index' }">
           <v-img src="/logo.png" max-width="220" contain class="mr-2"
         /></nuxt-link>
-        <v-btn text v-for="(item, i) in items" :key="i" :to="item.to">{{
+        <v-btn v-for="(item, i) in items" :key="i" text :to="item.to">{{
           item.title
         }}</v-btn>
       </v-row>

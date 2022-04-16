@@ -37,6 +37,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    'nuxt-gsap-module',
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -55,6 +57,31 @@ export default {
     baseURL: '/',
   },
 
+  // gsap
+  gsap: {
+    /* module options */
+    extraPlugins: {
+      cssRule: false,
+
+      text: true,
+      scrollTo: false,
+      scrollTrigger: false,
+    },
+    extraEases: {
+      expoScaleEase: false,
+      roughEase: true,
+      slowMo: false,
+    },
+  },
+
+  // google fonts
+  googleFonts: {
+    families: {
+      'IBM+Plex+Mono': true,
+      'Playfair+Display': true,
+    },
+  },
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
@@ -68,6 +95,8 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: false,
     theme: {
       dark: true,
       themes: {
