@@ -21,7 +21,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -78,14 +78,26 @@ export default {
   googleFonts: {
     families: {
       'IBM+Plex+Mono': true,
-      'Playfair+Display': true,
+      Charmonman: true,
     },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      theme_color: '#121212',
+      nativeUI: true,
+      name: 'iotron',
+      author: 'iotron',
+      description: `Web development agency`,
+      ogHost: 'https://www.iotron.co',
+    },
     manifest: {
       lang: 'en',
+      name: 'iotron',
+      short_name: 'iotron',
+      description: `Web development agency`,
+      background_color: '#121212',
     },
   },
 
@@ -99,10 +111,19 @@ export default {
     defaultAssets: false,
     theme: {
       dark: true,
+      options: {
+        customProperties: false,
+        variations: false,
+        // themeCache: {
+        //   get: (key) => localStorage.getItem(key),
+        //   set: (key, value) => localStorage.setItem(key, value),
+        // },
+        // minifyTheme,
+      },
       themes: {
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
+          primary: '#41bbf6',
+          accent: '#02f4c8',
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
@@ -114,5 +135,22 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extractCSS: {
+      ignoreOrder: true,
+    },
+    optimization: {
+      splitChunks: {
+        // maxSize: 200000,
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      },
+    },
+  },
 }

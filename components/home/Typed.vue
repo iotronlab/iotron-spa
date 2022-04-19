@@ -1,15 +1,25 @@
 <template>
-  <section class="text-lg-right">
+  <section class="text-center text-lg-right">
     <h1 class="text-h3">
-      <span class="light-green--text landing-header">ideas</span>
+      <span class="accent--text landing-header">ideas</span>
       <span class="landing-header">that</span><br />
-      <span class="font-weight-black light-blue--text landing-text"></span
+      <span class="font-weight-black primary--text landing-text"></span
       ><span class="cursor">_</span>
     </h1>
-    <h4 class="text-subtitle-1 mt-4">A Progressive Web Agency where</h4>
-    <h5 class="text-h3 text-md-h2">
-      <span class="text-span">DESIGN</span> meets development.
-    </h5>
+    <h2
+      class="text-h3 mt-16 font-weight-black"
+      style="z-index: 1000 !important"
+    >
+      Progressive Web Agency<span class="text-h6"> where</span>
+    </h2>
+
+    <h3 class="text-h6 mt-12">
+      <span class="text-span">design</span>
+      meets
+      <br />
+      <br />
+      <span class="text-h3 text-md-h2">Development.</span>
+    </h3>
   </section>
 </template>
 
@@ -90,7 +100,29 @@ export default {
 
 <style scoped>
 .text-span {
-  font-family: 'Playfair Display', serif;
+  font-family: Charmonman, cursive;
   font-style: italic;
+  font-weight: 700;
+  font-size: 8rem;
+  font-display: swap;
+  background-color: #02f4c8;
+  background-image: linear-gradient(-133deg, #41bbf6, #02f4c8);
+  color: transparent;
+  background-clip: text;
+  padding-right: 1.6rem;
+
+  /* animation: animated-text 10s infinite alternate-reverse; */
+  z-index: 10 !important;
+
+  /* -webkit-background-clip: text; */
+}
+@keyframes animated-text {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(-360deg);
+  }
 }
 </style>

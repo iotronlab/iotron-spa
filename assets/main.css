@@ -1,0 +1,36 @@
+.v-application.theme--light .nucard {
+  transition: all 0.2s !important;
+
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 1) !important;
+}
+
+.v-application.theme--dark .nucard {
+  transition: all 0.2s !important;
+
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8),
+    -5px -5px 10px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border-left: 1px solid #dadada;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border: solid 3px #e6e6e6;
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7851a9;
+}

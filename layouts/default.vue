@@ -23,6 +23,7 @@
         class="hidden-lg-and-up"
         @click.stop="drawer = !drawer"
       />
+      <v-switch v-model="$vuetify.theme.dark" inset label="Dark"></v-switch>
       <nuxt-link :to="{ name: 'index' }"
         ><v-img
           src="/logo.png"
@@ -44,7 +45,7 @@
       <nuxt />
     </v-main>
 
-    <v-footer :absolute="!fixed" app>
+    <v-footer absolute app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>

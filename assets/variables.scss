@@ -3,5 +3,16 @@
 // The variables you want to modify
 // $font-size-root: 20px;
 
+$color-pack: false;
 $heading-font-family: 'IBM Plex Mono', monospace;
 // $body-font-family: 'Source Sans Pro', sans-serif;
+
+$material-light: (
+  'background': #d9edf9,
+  //'cards': #f4f4f5,
+);
+$material-dark: (
+  'background': #001d2d,
+  'cards': #001d2d,
+);
+$card-elevation: 0;
