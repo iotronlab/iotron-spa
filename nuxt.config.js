@@ -37,8 +37,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    'nuxt-gsap-module',
     '@nuxtjs/google-fonts',
+    'nuxt-animejs',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -57,28 +57,12 @@ export default {
     baseURL: '/',
   },
 
-  // gsap
-  gsap: {
-    /* module options */
-    extraPlugins: {
-      cssRule: false,
-
-      text: true,
-      scrollTo: false,
-      scrollTrigger: false,
-    },
-    extraEases: {
-      expoScaleEase: false,
-      roughEase: true,
-      slowMo: false,
-    },
-  },
-
   // google fonts
   googleFonts: {
     families: {
       'IBM+Plex+Mono': true,
       Charmonman: true,
+      'Atkinson+Hyperlegible': true,
     },
   },
 

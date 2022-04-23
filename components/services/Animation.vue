@@ -1,5 +1,5 @@
 <template>
-  <div class="circuits" v-html="svg"></div>
+  <div class="circuits rounded-xl" v-html="svg"></div>
 </template>
 
 <script>
