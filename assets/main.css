@@ -12,6 +12,15 @@
     -5px -5px 10px rgba(65, 187, 246, 0.2) !important;
 }
 
+a {
+  text-decoration: none;
+  transition: 0.5s 0.1s ease-in-out;
+}
+
+p a:hover {
+  color: #6ee7b7;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 15px;
@@ -26,11 +35,11 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #b0b0b0;
-  border: solid 3px #e6e6e6;
+  border: solid 1px #e6e6e6;
   border-radius: 7px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #7851a9;
+  background: #41bbf6;
 }

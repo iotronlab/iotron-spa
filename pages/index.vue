@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-row no-gutters align="center" justify="center">
+    <v-row no-gutters align="center" justify="center" class="my-16">
       <v-col cols="12" lg="8" class="d-flex justify-center">
         <HomeAnimation />
       </v-col>
@@ -15,5 +15,10 @@
 <script>
 export default {
   name: 'IndexPage',
+  computed: {
+    height() {
+      return window.innerHeight
+    },
+  },
 }
 </script>

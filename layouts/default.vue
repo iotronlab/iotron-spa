@@ -1,41 +1,52 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer v-model="drawer" fixed app temporary>
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
+    <v-dialog v-model="drawer" fullscreen hide-overlay app>
+      <v-sheet height="100%">
+        <v-btn
+          fab
+          icon
+          fixed
+          right
+          aria-label="close-button"
+          @click.stop="drawer = !drawer"
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar fixed app flat color="transparent">
+          <v-icon x-large>{{ icons.close }}</v-icon></v-btn
+        >
+        <v-list>
+          <v-list-item
+            v-for="(item, i) in items"
+            :key="i"
+            :to="item.to"
+            router
+            exact
+            @click.stop="drawer = !drawer"
+          >
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title" />
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-sheet>
+    </v-dialog>
+    <v-app-bar fixed app flat>
+      <!-- <v-switch v-model="$vuetify.theme.dark" inset label="Dark"></v-switch> -->
+      <nuxt-link :to="{ name: 'index' }"
+        ><v-img src="/logo.png" max-width="220" contain
+      /></nuxt-link>
+      <v-spacer />
       <v-app-bar-nav-icon
+        aria-label="nav-button"
         class="hidden-lg-and-up"
         @click.stop="drawer = !drawer"
-      />
-      <v-switch v-model="$vuetify.theme.dark" inset label="Dark"></v-switch>
-      <nuxt-link :to="{ name: 'index' }"
-        ><v-img
-          src="/logo.png"
-          max-width="220"
-          contain
-          class="hidden-lg-and-up"
-      /></nuxt-link>
-
-      <v-row no-gutters justify="center" align="end" class="hidden-md-and-down">
-        <nuxt-link :to="{ name: 'index' }">
-          <v-img src="/logo.png" max-width="220" contain class="mr-2"
-        /></nuxt-link>
+      >
+        <v-icon slot="default" x-large>{{
+          icons.menu
+        }}</v-icon></v-app-bar-nav-icon
+      >
+      <v-row no-gutters justify="end" align="end" class="hidden-md-and-down">
         <v-btn v-for="(item, i) in items" :key="i" text :to="item.to">{{
           item.title
         }}</v-btn>
@@ -44,7 +55,7 @@
     <v-main>
       <nuxt />
     </v-main>
-
+    <LazyFooter />
     <v-footer absolute app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
@@ -52,29 +63,41 @@
 </template>
 
 <script>
+import { mdiMenu, mdiPhone, mdiEmail, mdiClose } from '@mdi/js'
 export default {
   name: 'DefaultLayout',
   data() {
     return {
-      clipped: false,
+      icons: {
+        menu: mdiMenu,
+        close: mdiClose,
+        call: mdiPhone,
+        email: mdiEmail,
+      },
       drawer: false,
-      fixed: false,
+
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-chart-bubble',
+          title: 'Services',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: '',
+          title: 'Portfolio',
+          to: '/portfolio',
+        },
+        {
+          icon: '',
+          title: 'Blogs',
+          to: '/blog',
+        },
+        {
+          icon: '',
+          title: 'Contact',
+          to: '/contact',
         },
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
     }
   },
 }

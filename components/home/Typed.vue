@@ -1,20 +1,16 @@
 <template>
   <section class="text-center text-lg-right">
     <h1 class="text-h3">
-      <span class="accent--text landing-header">ideas</span>
-      <span class="landing-header">that</span><br />
+      <b class="accent--text">ideas</b> that
       <!-- <span class="font-weight-black primary--text text"></span
       ><span class="cursor">_</span> -->
     </h1>
     <div class="text text-h3 primary--text"></div>
-    <h2
-      class="text-h3 mt-16 font-weight-black"
-      style="z-index: 1000 !important"
-    >
+    <h2 class="text-h3 mt-16 font-weight-black" style="position: relative">
       Progressive Web Agency<span class="text-h6"> where</span>
     </h2>
 
-    <h3 class="text-h6 mt-12">
+    <h3 class="text-h6 mt-10">
       <span class="text-span">design</span>
       meets
       <br />
@@ -30,43 +26,7 @@ export default {
 
   data() {
     return {
-      landingText: ['connect', 'evolve', 'dominate'],
-
-      items: [
-        {
-          title: 'Enterprise Systems Design and Development',
-          text: `Applications to manage, regulate or automate at various levels of the business process and aftersales.
-        As <strong><i>modern enterprises</i></strong> have become more complex with more problems and people to deal with,
-        it is important to integrate the latest technologies into the system in order to <span class="success--text">
-        optimize</span> the business at every level.`,
-          subtext: 'Newly released songs. Updated daily.',
-          services: ['Enterprise Resource Management'],
-          // img: require('~/assets/img/program.svg'),
-        },
-        {
-          title: 'Progressive Web Application Development',
-          text: `Applications varying from portfolio,
-        forums to eCommerce, make your presence
-        felt on the web.`,
-          subtext: 'Newly released songs. Updated daily.',
-
-          // img: require('~/assets/img/seo.svg'),
-        },
-        {
-          title: 'Native Application Development',
-          text: 'Native Android, Windows and iOS application development, ready to be uploaded on the play store/app store.',
-          subtext: 'Lose yourself in rock tunes.',
-          // img: require('~/assets/img/mobile.svg'),
-        },
-        {
-          title: 'AI/Automation Based Solutions',
-          text: 'Application to engage users with chatbot, or use analytics to make sense of the generated data.',
-          subtext: 'Chill beats to mellow you out.',
-
-          //  img: require('~/assets/img/aicard.svg'),
-        },
-      ],
-      transparent: 'rgba(255, 255, 255, 0)',
+      // landingText: ['connect', 'evolve', 'dominate'],
     }
   },
 
@@ -178,24 +138,22 @@ export default {
   font-weight: 700;
   font-size: 8rem;
   font-display: swap;
-  background-color: #02f4c8;
-  background-image: linear-gradient(-133deg, #41bbf6, #02f4c8);
+  background: linear-gradient(
+    -110deg,
+    #02f4c8 10%,
+    #41bbf6 30%,
+    #41bbf6 70%,
+    #02f4c8 80%
+  );
   color: transparent;
   background-clip: text;
   padding-right: 1.6rem;
-
-  /* animation: animated-text 10s infinite alternate-reverse; */
-  z-index: 10 !important;
-
-  /* -webkit-background-clip: text; */
+  animation: animated-text 10s linear infinite;
+  background-size: 200% auto;
 }
 @keyframes animated-text {
-  from {
-    filter: hue-rotate(0deg);
-  }
-
   to {
-    filter: hue-rotate(-360deg);
+    background-position: 200% center;
   }
 }
 </style>
