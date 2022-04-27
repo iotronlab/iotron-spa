@@ -1,6 +1,12 @@
 <template>
   <v-app dark>
-    <v-dialog v-model="drawer" fullscreen hide-overlay app>
+    <v-dialog
+      v-model="drawer"
+      fullscreen
+      hide-overlay
+      app
+      class="hidden-lg-and-up"
+    >
       <v-sheet height="100%">
         <v-btn
           fab
@@ -12,7 +18,7 @@
         >
           <v-icon x-large>{{ icons.close }}</v-icon></v-btn
         >
-        <v-list>
+        <v-list class="pt-16">
           <v-list-item
             v-for="(item, i) in items"
             :key="i"
@@ -32,11 +38,11 @@
       </v-sheet>
     </v-dialog>
     <v-app-bar fixed app flat>
-      <!-- <v-switch v-model="$vuetify.theme.dark" inset label="Dark"></v-switch> -->
       <nuxt-link :to="{ name: 'index' }"
         ><v-img src="/logo.png" max-width="220" contain
       /></nuxt-link>
       <v-spacer />
+
       <v-app-bar-nav-icon
         aria-label="nav-button"
         class="hidden-lg-and-up"
@@ -46,7 +52,14 @@
           icons.menu
         }}</v-icon></v-app-bar-nav-icon
       >
-      <v-row no-gutters justify="end" align="end" class="hidden-md-and-down">
+      <v-row no-gutters justify="end" align="center" class="hidden-md-and-down">
+        <v-switch
+          v-model="$vuetify.theme.dark"
+          inset
+          label="Dark"
+          hide-details
+          class="mr-4"
+        ></v-switch>
         <v-btn v-for="(item, i) in items" :key="i" text :to="item.to">{{
           item.title
         }}</v-btn>

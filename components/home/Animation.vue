@@ -288,44 +288,46 @@ export default {
       //     loop: true,
       //   })
       // }
-      anime({
-        targets: '.circuits path',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutSine',
-        duration: 5000,
-        delay: 1000,
-        direction: 'alternate',
-        loop: true,
-      })
-      anime({
-        targets: '.circuits path',
-        fillOpacity: [0, 1],
-        easing: 'easeInOutSine',
-        duration: 3000,
-        delay: 3000,
-        direction: 'alternate',
-        loop: true,
-      })
+      const animation = anime
+
+      animation
+        .timeline({
+          loop: true,
+          direction: 'alternate',
+          targets: '.circuits path',
+        })
+        .add({
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: 'easeInOutSine',
+          duration: 5000,
+          delay: 1000,
+        })
+        .add({
+          fillOpacity: [0, 1],
+          easing: 'easeInOutSine',
+          duration: 3000,
+          delay: 3000,
+        })
     },
   },
 }
 </script>
 <style lang="scss">
 // animations
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
+// @keyframes draw {
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
 
-@keyframes fill {
-  from {
-    fill-opacity: 0;
-  }
-  to {
-    fill-opacity: 1;
-  }
-}
+// @keyframes fill {
+//   from {
+//     fill-opacity: 0;
+//   }
+//   to {
+//     fill-opacity: 1;
+//   }
+// }
 
 .circuits {
   width: 50%;

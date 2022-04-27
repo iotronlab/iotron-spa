@@ -6,17 +6,18 @@
       ><span class="cursor">_</span> -->
     </h1>
     <div class="text text-h3 primary--text"></div>
-    <h2 class="text-h3 mt-16 font-weight-black" style="position: relative">
-      Progressive Web Agency<span class="text-h6"> where</span>
+    <h2
+      class="text-h3 text-md-h1 mt-16 font-weight-black"
+      style="position: relative"
+    >
+      Progressive Web Agency
     </h2>
 
-    <h3 class="text-h6 mt-10">
-      <span class="text-span">design</span>
-      meets
-      <br />
-      <br />
-      <span class="text-h3 text-md-h2">Development.</span>
-    </h3>
+    <h2 class="text-h6 mt-10">
+      <span class="text-span">design </span>
+      <span> <sup>feat.</sup></span>
+    </h2>
+    <h2 class="text-h3 text-md-h1 font-weight-black mt-2">Development.</h2>
   </section>
 </template>
 
@@ -135,7 +136,7 @@ export default {
 .text-span {
   font-family: Charmonman, cursive;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 8rem;
   font-display: swap;
   background: linear-gradient(
@@ -147,7 +148,7 @@ export default {
   );
   color: transparent;
   background-clip: text;
-  padding-right: 1.6rem;
+  padding-right: 1.5rem;
   animation: animated-text 10s linear infinite;
   background-size: 200% auto;
 }
