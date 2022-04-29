@@ -9,6 +9,9 @@
       </v-col>
     </v-row>
     <HomeServices />
+
+    <HomeIntegrations />
+    <HomeTools />
   </v-container>
 </template>
 
@@ -22,3 +25,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.circuit-bg {
+  background: url('@/assets/images/integrations/circuitbg.svg') no-repeat;
+  background-size: 100%;
+}
+</style>

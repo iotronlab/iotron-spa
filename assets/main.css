@@ -43,3 +43,10 @@ p a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #41bbf6;
 }
+
+.glass-morph {
+  background-color: rgba(230, 255, 255, 0.75) !important;
+  backdrop-filter: blur(8px) saturate(160%) !important;
+  box-shadow: 0px 0px 10px 10px rgba(65, 187, 246, 0.4) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(160%) !important;
+}
