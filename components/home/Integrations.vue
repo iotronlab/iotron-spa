@@ -91,6 +91,10 @@ export default {
               name: 'Shiprocket',
               img: require('@/assets/images/integrations/shiprocket.webp'),
             },
+            {
+              name: 'Pickrr',
+              img: require('@/assets/images/integrations/pickrr.webp'),
+            },
           ],
         },
         {
@@ -99,6 +103,10 @@ export default {
             {
               name: 'GDrive',
               img: require('@/assets/images/integrations/drive.webp'),
+            },
+            {
+              name: 'Amazon s3',
+              img: require('@/assets/images/integrations/s3.webp'),
             },
             {
               name: 'Firebase',
