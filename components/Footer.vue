@@ -111,16 +111,5 @@ export default {
       ],
     }
   },
-  async fetch() {
-    await this.$axios
-      .$get('policy')
-      .then((res) => {
-        this.policies = res.data
-      })
-      .catch((err) => {
-        this.errorMessage = err
-        this.$sentry.captureException(new Error(err))
-      })
-  },
 }
 </script>

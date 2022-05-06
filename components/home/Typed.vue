@@ -1,16 +1,13 @@
 <template>
-  <section class="text-center text-lg-right">
-    <h1 class="text-h3">
+  <section class="text-center">
+    <h1 class="text-h4 text-sm-h3 mt-10 mt-lg-0">
       <b class="accent--text">ideas</b> that
       <!-- <span class="font-weight-black primary--text text"></span
       ><span class="cursor">_</span> -->
+      <div class="text primary--text"></div>
     </h1>
-    <div class="text text-h3 primary--text"></div>
-    <h2
-      class="text-h3 text-md-h1 mt-16 font-weight-black"
-      style="position: relative"
-    >
-      Progressive Web Agency
+    <h2 class="text-h3 text-md-h1 font-weight-black" style="position: relative">
+      Progressive Web Agency~
     </h2>
 
     <h2 class="text-h6 mt-10">

@@ -10,7 +10,7 @@
       of the API services we have worked on
     </h2>
     <div class="box">
-      <v-card class="mt-8 py-4 rounded-xl text-center glass-morph" light flat>
+      <v-card class="mt-8 py-4 rounded-xl text-center glass-morph" light>
         <section v-for="(item, i) in items" :key="i">
           <p class="text-h6 font-weight-black">
             {{ item.name }}

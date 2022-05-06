@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" lg="10" class="mx-auto pa-0">
+  <v-col cols="12" lg="10" class="mx-auto mt-lg-n16">
     <h1 class="overline">Our services</h1>
 
     <h2 class="text-h4">
