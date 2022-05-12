@@ -90,6 +90,11 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
+  loadingIndicator: {
+    name: 'wandering-cubes',
+    color: '#02f4c8',
+    background: '#0f172a',
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

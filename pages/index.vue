@@ -8,7 +8,7 @@
         <HomeAnimation />
       </v-col>
     </v-row>
-    <HomeServices />
+    <LazyHomeServices />
 
     <LazyHomeIntegrations />
     <v-col cols="12" lg="10" class="mx-auto">
