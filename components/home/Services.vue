@@ -1,10 +1,23 @@
 <template>
   <v-col cols="12" lg="10" class="mx-auto mt-lg-n16">
-    <h1 class="overline">Our services</h1>
+    <h1 class="text-h4 text-center">Our services</h1>
+    <v-row no-gutters>
+      <v-col cols="12" lg="6"
+        ><h2 class="text-h4 quote" style="overflow: hidden">
+          Our Diverse Solutions covering the diverse needs of a Modern Business.
+        </h2></v-col
+      >
+      <v-col cols="12" lg="6">
+        <h2
+          v-for="(item, i) in items"
+          :key="i"
+          class="text-h5 text-lg-h4 primary--text my-4"
+        >
+          {{ item.title }}
+        </h2>
+      </v-col>
+    </v-row>
 
-    <h2 class="text-h4">
-      Our Diverse Solutions covering the diverse needs of a Modern Business.
-    </h2>
     <v-divider class="my-2" />
 
     <v-row no-gutters justify="center">
@@ -144,6 +157,47 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    this.textAnimate()
+  },
+  methods: {
+    textAnimate() {
+      const quotes = document.querySelectorAll('.quote')
+      const gsap = this.$gsap
+      const SplitText = this.$SplitText
+      const ScrollTrigger = this.$ScrollTrigger
+      function setupSplits() {
+        quotes.forEach((quote) => {
+          // Reset if needed
+          if (quote.anim) {
+            quote.anim.progress(1).kill()
+            quote.split.revert()
+          }
+
+          quote.split = new SplitText(quote, {
+            type: 'lines,words,chars',
+            linesClass: 'split-line',
+          })
+
+          // Set up the anim
+          quote.anim = gsap.from(quote.split.chars, {
+            scrollTrigger: {
+              trigger: quote,
+              toggleActions: 'restart pause resume reverse',
+              start: 'top 90%',
+            },
+            duration: 0.6,
+            ease: 'circ.out',
+            y: 80,
+            stagger: 0.02,
+          })
+        })
+      }
+
+      ScrollTrigger.addEventListener('refresh', setupSplits)
+      setupSplits()
+    },
   },
 }
 </script>

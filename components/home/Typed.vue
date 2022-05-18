@@ -1,20 +1,24 @@
 <template>
   <section class="text-center">
     <h1 class="text-h4 text-sm-h3 mt-10 mt-lg-0">
-      <b class="accent--text">ideas</b> that
-      <!-- <span class="font-weight-black primary--text text"></span
-      ><span class="cursor">_</span> -->
-      <div class="text primary--text"></div>
+      <span> <b class="accent--text">ideas</b> that</span>
+      <br />
+      <span class="font-weight-black accent--text landing-text">connect</span>
+      <!-- <div class="text primary--text"></div> -->
     </h1>
-    <h2 class="text-h3 text-md-h1 font-weight-black" style="position: relative">
-      Progressive Web Agency~
-    </h2>
 
-    <h2 class="text-h6 mt-10">
+    <h1 class="text-h3 text-md-h1 font-weight-black" style="position: relative">
+      <span>Progressive</span> <span> Web Agency~</span>
+    </h1>
+
+    <h1 class="text-h6 mt-10">
       <span class="text-span">design </span>
       <span> <sup>feat.</sup></span>
-    </h2>
-    <h2 class="text-h3 text-md-h1 font-weight-black mt-2">Development.</h2>
+      <br />
+      <span class="text-h3 text-md-h1 font-weight-black mt-2"
+        >Development.</span
+      >
+    </h1>
   </section>
 </template>
 
@@ -27,103 +31,68 @@ export default {
       // landingText: ['connect', 'evolve', 'dominate'],
     }
   },
-
-  mounted() {
-    this.typeLandingText()
+  computed: {
+    gsap() {
+      return this.$gsap
+    },
   },
 
+  mounted() {
+    setTimeout(() => {
+      this.typeLandingText()
+      this.revealAnimations()
+    }, 500)
+  },
   methods: {
+    revealAnimations() {
+      const gsap = this.gsap
+      const tl = gsap.timeline({ default: { duration: 2 } })
+      tl.to('h1 span', { opacity: 1, stagger: 0.5 })
+    },
+
     typeLandingText() {
-      // const gsap = this.$gsap
+      const gsap = this.gsap
+
       // gsap.to('.cursor', {
       //   opacity: 0,
       //   x: 100,
       //   ease: 'power2.inOut',
       //   repeat: -1,
       // })
-      // const masterTl = gsap.timeline({ repeat: -1 })
-      // this.landingText.forEach((word) => {
-      //   const tl = gsap.timeline({
-      //     repeat: 1,
-      //     yoyo: true,
-      //     repeatDelay: 1,
-      //     ease: 'power2.inOut',
-      //   })
-      //   tl.to('.landing-text', { duration: 1, text: word })
-      //   masterTl.add(tl)
-      // })
-      class TextScramble {
-        constructor(el) {
-          this.el = el
-          this.chars = '!<>-_\\/[]{}—=+*^?#________'
-          this.update = this.update.bind(this)
-        }
 
-        setText(newText) {
-          const oldText = this.el.innerText
-          const length = Math.max(oldText.length, newText.length)
-          const promise = new Promise((resolve) => (this.resolve = resolve))
-          this.queue = []
-          for (let i = 0; i < length; i++) {
-            const from = oldText[i] || ''
-            const to = newText[i] || ''
-            const start = Math.floor(Math.random() * 40)
-            const end = start + Math.floor(Math.random() * 40)
-            this.queue.push({ from, to, start, end })
-          }
-          cancelAnimationFrame(this.frameRequest)
-          this.frame = 0
-          this.update()
-          return promise
-        }
+      //  const SplitText = this.$SplitText
 
-        update() {
-          let output = ''
-          let complete = 0
-          for (let i = 0, n = this.queue.length; i < n; i++) {
-            let { char } = this.queue[i]
-            const { from, to, start, end } = this.queue[i]
-            if (this.frame >= end) {
-              complete++
-              output += to
-            } else if (this.frame >= start) {
-              if (!char || Math.random() < 0.28) {
-                char = this.randomChar()
-                this.queue[i].char = char
-              }
-              output += `<span>${char}</span>`
-            } else {
-              output += from
-            }
-          }
-          this.el.innerHTML = output
-          if (complete === this.queue.length) {
-            this.resolve()
-          } else {
-            this.frameRequest = requestAnimationFrame(this.update)
-            this.frame++
-          }
-        }
-
-        randomChar() {
-          return this.chars[Math.floor(Math.random() * this.chars.length)]
-        }
-      }
-
-      const phrases = ['Connect', 'Dominate', 'Evolve']
-
-      const el = document.querySelector('.text')
-      const fx = new TextScramble(el)
-
-      let counter = 0
-      const next = () => {
-        fx.setText(phrases[counter]).then(() => {
-          setTimeout(next, 1500)
+      const landingText = ['connect', 'evolve', 'dominate']
+      const masterTl = gsap.timeline({ repeat: -1 })
+      landingText.forEach((word) => {
+        //  const split = new SplitText(word, { type: 'chars' })
+        const tl = gsap.timeline({
+          repeat: 1,
+          yoyo: true,
+          repeatDelay: 1,
+          ease: 'power2.inOut',
         })
-        counter = (counter + 1) % phrases.length
-      }
-
-      next()
+        // tl.from(split.chars, {
+        //   opacity: 0,
+        //   y: 50,
+        //   ease: 'back(4)',
+        //   stagger: {
+        //     from: 'end', // try "center" and "edges"
+        //     each: 0.05,
+        //   },
+        // })
+        tl.to('.landing-text', {
+          duration: 3,
+          scrambleText: {
+            text: word,
+            chars: '!<>-_\\/[]{}—=+*^?#',
+            newClass: 'primary--text',
+            revealDelay: 0.5,
+            tweenLength: false,
+          },
+        })
+        masterTl.add(tl)
+      })
     },
   },
 }
@@ -153,5 +122,9 @@ export default {
   to {
     background-position: 200% center;
   }
+}
+
+h1 span {
+  opacity: 0;
 }
 </style>

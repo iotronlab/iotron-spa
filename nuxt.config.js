@@ -39,6 +39,7 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/google-fonts',
     'nuxt-animejs',
+    'nuxt-gsap-module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -68,7 +69,53 @@ export default {
       'Atkinson+Hyperlegible': true,
     },
   },
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    css: false,
 
+    beforeEnter(el) {
+      this.$gsap.set(el, {
+        opacity: 0,
+      })
+    },
+
+    enter(el, done) {
+      this.$gsap.to(el, {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.inOut',
+        onComplete: done,
+      })
+    },
+
+    leave(el, done) {
+      this.$gsap.to(el, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.inOut',
+        onComplete: done,
+      })
+    },
+  },
+  // gsap
+  gsap: {
+    extraPlugins: {
+      scrollTo: true,
+      scrollTrigger: true,
+      text: true,
+    },
+    clubPlugins: {
+      drawSVG: true,
+      gsDevTools: true,
+      scrollSmoother: true,
+      scrambleText: true,
+      splitText: true,
+    },
+    extraEases: {
+      // expoScaleEase: true,
+    },
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {
@@ -123,8 +170,10 @@ export default {
           success: colors.green.accent3,
         },
         light: {
-          primary: '#0369a1',
-          accent: '#0f766e',
+          // primary: '#0369a1',
+          // accent: '#0f766e',
+          primary: '#41bbf6',
+          accent: '#02f4c8',
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
