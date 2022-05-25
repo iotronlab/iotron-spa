@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark id="content">
     <NavigationBase :nav-items="items" />
     <v-main>
       <nuxt />
@@ -48,6 +48,21 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    this.scrollSmootherInit()
+  },
+
+  methods: {
+    scrollSmootherInit() {
+      const ScrollSmoother = this.$ScrollSmoother
+      ScrollSmoother.create({
+        content: '#content',
+        wrapper: '#wrapper',
+        smooth: 1,
+        effects: true,
+      })
+    },
   },
 }
 </script>

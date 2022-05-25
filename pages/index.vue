@@ -8,13 +8,14 @@
         <HomeAnimation />
       </v-col>
     </v-row>
+
+    <lazyHomeDevices />
+
     <LazyHomeServices />
 
     <LazyHomeIntegrations />
 
-    <h1 class="scrollingText text-h1" style="position: absolute">
-      Tools of the trade # Tools of the trade
-    </h1>
+    <h1 class="text-h3 text-center">Tools of the trade</h1>
     <v-col cols="12" lg="10" class="mx-auto">
       <section ref="wrapper" class="demo-text">
         <div ref="wraptext" class="text-h1"></div>

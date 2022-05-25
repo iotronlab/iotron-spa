@@ -1,18 +1,20 @@
 <template>
   <v-col cols="12" lg="10" class="mx-auto mt-lg-n16">
-    <h1 class="text-h4 text-center">Our services</h1>
-    <v-row no-gutters>
-      <v-col cols="12" lg="6"
-        ><h2 class="text-h4 quote" style="overflow: hidden">
-          Our Diverse Solutions covering the diverse needs of a Modern Business.
-        </h2></v-col
+    <h2 class="text-h4 quote" style="overflow: hidden">
+      Our services
+      <br />
+      Our Diverse Solutions covering the diverse needs of a Modern Business.
+    </h2>
+    <v-row no-gutters class="text-center">
+      <v-col
+        v-for="(item, i) in items"
+        :key="i"
+        cols="12"
+        sm="6"
+        lg="3"
+        class="pa-1"
       >
-      <v-col cols="12" lg="6">
-        <h2
-          v-for="(item, i) in items"
-          :key="i"
-          class="text-h5 text-lg-h4 primary--text my-4"
-        >
+        <h2 class="text-h5 primary--text my-4">
           {{ item.title }}
         </h2>
       </v-col>
@@ -185,11 +187,12 @@ export default {
             scrollTrigger: {
               trigger: quote,
               toggleActions: 'restart pause resume reverse',
-              start: 'top 90%',
+              start: 'top 50%',
             },
             duration: 0.6,
+            opacity: 0,
+            y: 10,
             ease: 'circ.out',
-            y: 80,
             stagger: 0.02,
           })
         })
@@ -232,4 +235,7 @@ export default {
 .show-btns {
   color: rgba(255 255 255 100%) !important;
 } */
+.split-line {
+  overflow: hidden;
+}
 </style>

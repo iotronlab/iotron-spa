@@ -107,6 +107,7 @@ export default {
     },
     clubPlugins: {
       drawSVG: true,
+      morphSVG: true,
       gsDevTools: true,
       scrollSmoother: true,
       scrambleText: true,
