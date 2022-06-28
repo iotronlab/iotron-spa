@@ -24,7 +24,7 @@ export default {
   css: ['@/assets/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/vue-masonry-css.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -50,6 +50,7 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // { src: '~/plugins/vue-masonry', ssr: false },
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -152,7 +153,7 @@ export default {
     theme: {
       dark: true,
       options: {
-        customProperties: false,
+        customProperties: true,
         variations: false,
         // themeCache: {
         //   get: (key) => localStorage.getItem(key),
@@ -174,7 +175,7 @@ export default {
           // primary: '#0369a1',
           // accent: '#0f766e',
           primary: '#41bbf6',
-          accent: '#02f4c8',
+          accent: '#0d9488',
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,

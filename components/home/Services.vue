@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" lg="10" class="mx-auto mt-lg-n16">
+  <v-col cols="12" lg="10" class="mx-auto">
     <h2 class="text-h4 quote" style="overflow: hidden">
       Our services
       <br />

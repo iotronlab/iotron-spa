@@ -416,33 +416,44 @@ export default {
       const mainlines = document.querySelectorAll('#mainlines path')
       const sublines = document.querySelectorAll('#sublines path')
       const datacenters = document.querySelectorAll('#datacenters path')
-      //  gsap.from(datacenters, { duration: 6, drawSVG: 0, yoyo: true })
+      gsap.set([datacenters], { autoAlpha: 0 })
       gsap
-        .timeline({ defaults: { duration: 5 }, repeat: -1, yoyo: true })
+        .timeline({ defaults: { duration: 3 }, repeat: -1, yoyo: true })
 
-        .from([world, datacenters], {
+        .from([world], {
           drawSVG: 0,
-          duration: 2,
-          ease: 'power2.inOut',
+          // stroke: 'hsl(360, 100%, 50%)',
+          duration: 3,
+          stagger: 0.1,
+          ease: 'power1.inOut',
         })
-        .to([world, datacenters], {
-          duration: 2,
-          fill: '#02f4c8',
-          ease: 'power2.inOut',
-        })
+        .to(
+          [world, datacenters],
+          {
+            duration: 2,
+            autoAlpha: 1,
+
+            fill: '#02f4c8',
+            stagger: 0.1,
+            ease: 'power2.inOut',
+          },
+          '-=2'
+        )
         .fromTo(
           [sky, sea, mainlines, sublines],
           { drawSVG: 0 },
           {
             drawSVG: '50% 70%',
-            stroke: '#02f4c8',
+            stroke: 'hsl(360, 100%, 50%)',
             strokeWidth: '0.15rem',
+            // attr: { stroke: 'hsl(360, 100%, 50%)' },
             ease: 'sine.in',
           }
         )
 
         .to([sky, sea, mainlines, sublines], {
           drawSVG: '100% 100%',
+          strokeWidth: '0.2rem',
           ease: 'sine.out',
         })
 
@@ -494,30 +505,35 @@ export default {
     // stroke-width: 0.15rem;
     //  fill-opacity: 0;
   }
+
   #sky path {
     // fill: #41bbf6;
     stroke: #41bbf6;
     // stroke-width: 0.15rem;
     //  fill-opacity: 0;
   }
+
   #sea path {
     // fill: #41bbf6;
     stroke: #41bbf6;
     // stroke-width: 0.15rem;
     //  fill-opacity: 0;
   }
+
   #mainlines path {
     // fill: #41bbf6;
     stroke: #41bbf6;
     // stroke-width: 0.15rem;
     //  fill-opacity: 0;
   }
+
   #sublines path {
     // fill: #41bbf6;
     stroke: #41bbf6;
     // stroke-width: 0.15rem;
     //  fill-opacity: 0;
   }
+
   #datacenters path {
     // fill: #41bbf6;
     stroke: #41bbf6;

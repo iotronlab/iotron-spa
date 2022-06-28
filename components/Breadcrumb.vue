@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <v-breadcrumbs
-      :items="breadcrumbItems"
-      divider="/"
-      large
-      class="justify-center text-caption font-weight-bold"
-    ></v-breadcrumbs>
-  </div>
+  <v-breadcrumbs
+    :items="breadcrumbItems"
+    divider="/"
+    large
+    class="text-caption font-weight-bold"
+  ></v-breadcrumbs>
 </template>
 
 <script>

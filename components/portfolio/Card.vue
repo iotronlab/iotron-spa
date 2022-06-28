@@ -1,42 +1,40 @@
 <template>
-  <v-hover v-slot="{ hover }">
-    <v-card
-      :to="{
-        name: 'portfolio-slug',
-        params: {
-          slug: portfolio.url,
-        },
-      }"
-      nuxt
+  <div class="my-4">
+    <!-- <v-card :to="{
+      name: 'portfolio-slug',
+      params: {
+        slug: portfolio.url,
+      },
+    }" nuxt outlined class="my-2"> -->
+    <v-img
+      :src="portfolio.image != null ? portfolio.image : 'logo.png'"
+      class="rounded-xl"
     >
-      <v-img
-        :src="portfolio.images[0] != null ? portfolio.images[0] : 'logo.png'"
-        :aspect-ratio="4 / 3"
-      >
-        <v-fade-transition>
-          <div v-if="!hover" class="overlay pa-2">
-            <h2 class="text-h6 text-md-h4">
-              <span class="text-overline">Project</span><br />{{
+      <!-- <v-fade-transition>
+        <div v-if="!hover" class="overlay pa-2">
+          <h2 class="text-h6 text-md-h4">
+            <span class="text-overline">Project</span><br />{{
                 portfolio.name
-              }}
-            </h2>
-          </div>
-        </v-fade-transition>
-      </v-img>
-      <v-card-text class="pt-6" style="position: relative">
-        <v-btn absolute color="accent" fab icon outlined large right top>
-          <v-icon> {{ icons.view }}</v-icon>
-        </v-btn>
+            }}
+          </h2>
+        </div>
+      </v-fade-transition> -->
+    </v-img>
+    <v-card-text class="pt-6">
+      <!-- <v-btn absolute color="accent" fab icon outlined large right top>
+        <v-icon> {{ icons.view }}</v-icon>
+      </v-btn> -->
 
-        <!-- <v-divider class="my-4"></v-divider>
+      <!-- <v-divider class="my-4"></v-divider>
                   <v-sheet
                     class="nucard pa-4 text-h6"
                     v-html="portfolio.client_brief"
                     rounded="xl"
                   ></v-sheet> -->
-      </v-card-text>
-    </v-card>
-  </v-hover>
+    </v-card-text>
+
+    <h1 class="text-h5">{{ portfolio.name }}</h1>
+  </div>
 </template>
 
 <script>
