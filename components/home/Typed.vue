@@ -83,6 +83,9 @@ export default {
         // })
         tl.to('.landing-text', {
           duration: 3,
+          rotationY: 360,
+          ease: 'back(2)',
+          stagger: { amount: 1, ease: 'power2.in' },
           scrambleText: {
             text: word,
             chars: '!<>-_\\/[]{}—=+*^?#',
@@ -118,6 +121,7 @@ export default {
   animation: animated-text 10s linear infinite;
   background-size: 200% auto;
 }
+
 @keyframes animated-text {
   to {
     background-position: 200% center;
