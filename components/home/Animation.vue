@@ -882,8 +882,6 @@ export default {
       const sublines = document.querySelectorAll('#sublines path')
       const datacenters = document.querySelectorAll('#datacenters path')
 
-      gsap.set([datacenters], { autoAlpha: 0 })
-
       function weightedRandom(collection, ease) {
         return gsap.utils.pipe(
           Math.random, // random number between 0 and 1
@@ -904,26 +902,32 @@ export default {
       ]
       const randomColor = weightedRandom(colors, 'linear')
 
+      // gsap.set([datacenters, sat], { autoAlpha: 0 })
+
+      gsap.set([world, datacenters, sat], {
+        stroke: randomColor,
+        strokeWidth: '0.3rem',
+      })
+
       function revealAnime() {
         const tl = gsap.timeline()
-        tl.from([world], {
+        tl.from([world, datacenters, sat], {
           drawSVG: 0,
-          stroke: randomColor,
           duration: 2,
           stagger: {
-            each: 0.1,
+            each: 0.01,
             from: 'center',
           },
           ease: 'power1.inOut',
         }).to(
-          [world, datacenters],
+          [datacenters, sat],
           {
             duration: 2,
             autoAlpha: 1,
             fill: randomColor,
-            stroke: randomColor,
+            strokeWidth: '0.1rem',
             stagger: {
-              each: 0.1,
+              each: 0.01,
               from: 'center',
             },
             ease: 'power2.inOut',
@@ -933,24 +937,24 @@ export default {
         return tl
       }
 
-      function blinkAnime() {
-        const tl = gsap.timeline({
-          defaults: { duration: 1 },
-          repeat: -1,
-          yoyo: true,
-        })
-        tl.to([datacenters, sat], {
-          scale: 1.2,
-          transformOrigin: '50% 50%',
-          // strokeWidth: 4,
-          stagger: {
-            each: 0.01,
-            from: 'center',
-          },
-          ease: 'elastic',
-        })
-        return tl
-      }
+      const blinkAnime = gsap.timeline({
+        defaults: { duration: 1 },
+        repeat: -1,
+        yoyo: true,
+      })
+      blinkAnime.to([datacenters, sat], {
+        scale: 1.3,
+        autoAlpha: 0.5,
+        transformOrigin: '50% 50%',
+        fill: randomColor,
+        stroke: randomColor,
+        strokeWidth: '0.15rem',
+        stagger: {
+          each: 0.02,
+          from: 'center',
+        },
+        ease: 'elastic',
+      })
 
       function waveAnime() {
         const tl = gsap.timeline({
@@ -962,7 +966,7 @@ export default {
           [sky, mainlines, sublines],
           { drawSVG: 0 },
           {
-            drawSVG: '60% 80%',
+            drawSVG: '73% 80%',
             // stroke: 'hsl(360, 100%, 50%)',
             stroke: randomColor,
             strokeWidth: '0.2rem',
@@ -973,8 +977,8 @@ export default {
           }
         ).to([sky, mainlines, sublines], {
           drawSVG: '100% 100%',
-          strokeWidth: '0.15rem',
-
+          strokeWidth: '0.3rem',
+          stroke: randomColor,
           ease: 'sine.out',
         })
         return tl
@@ -982,31 +986,38 @@ export default {
 
       function colorAnime() {
         const tl = gsap.timeline({
-          defaults: { duration: 2 },
+          defaults: { duration: 3 },
           repeat: -1,
           yoyo: true,
         })
 
-        tl.to([sat, mainlines, sublines, datacenters, world], {
-          duration: 2,
-          autoAlpha: 0.4,
-          fill: randomColor,
-          stroke: randomColor,
-          stagger: {
-            each: 0.01,
-            from: 'center',
+        tl.fromTo(
+          [mainlines, sublines, world],
+          {
+            stroke: randomColor,
+            strokeWidth: '0.2rem',
           },
-          ease: 'elastic',
-        })
+          {
+            duration: 2,
+            fill: randomColor,
+            stroke: randomColor,
+            strokeWidth: '0.1rem',
+            stagger: {
+              each: 0.01,
+              from: 'center',
+            },
+            ease: 'elastic',
+          }
+        )
         return tl
       }
 
       this.localTl = gsap
         .timeline({ defaults: { duration: 3 } })
         .add(revealAnime())
-        .add(colorAnime())
-        .add(blinkAnime())
-        .add(waveAnime())
+        .add(colorAnime(), '-=1')
+        .add(blinkAnime)
+        .add(waveAnime(), '<')
 
       const hoverAnime = gsap.timeline({
         defaults: { duration: 2 },
@@ -1015,12 +1026,11 @@ export default {
         // yoyo: true,
       })
       hoverAnime.to([datacenters, sat], {
-        scale: 2.5,
-        transformOrigin: '50% 50%',
-        autoAlpha: 1,
+        scale: 1.5,
+        transformOrigin: 'center center',
         fill: randomColor,
         stroke: randomColor,
-        // strokeWidth: 4,
+        strokeWidth: 4,
         stagger: {
           each: 0.01,
           from: 'center',
@@ -1029,13 +1039,13 @@ export default {
       })
       // console.log(sat)
 
-      datacenters.forEach(function (element) {
-        element.addEventListener('mouseover', function () {
-          hoverAnime.play()
-        })
+      // datacenters.forEach(function (element) {
+      //   element.addEventListener('mouseover', function () {
+      //     hoverAnime.play()
+      //   })
 
-        element.addEventListener('mouseout', () => hoverAnime.reverse())
-      })
+      //   element.addEventListener('mouseout', () => hoverAnime.reverse())
+      // })
       // for each element in sat, add event listener for mouseenter and mouseleave
 
       // .to(
@@ -1100,7 +1110,7 @@ export default {
 
   #sky path {
     // fill: #41bbf6;
-    stroke: #41bbf6;
+    // stroke: #41bbf6;
     // stroke-width: 0.15rem;
     //  fill-opacity: 0;
   }

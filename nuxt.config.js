@@ -116,6 +116,8 @@ export default {
     },
     extraEases: {
       // expoScaleEase: true,
+      slowMo: true,
+      roughEase: true,
     },
   },
   // PWA module configuration: https://go.nuxtjs.dev/pwa

@@ -39,7 +39,16 @@
         stroke-width="1"
         viewBox="0 0 300 350"
       >
-        <g id="introAnimDevice">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="10" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <g id="devices" filter="url(#glow)">
           <path
             fill="#41bbf6"
             stroke="#02f4c8"
@@ -154,7 +163,7 @@ export default {
     startAnimation() {
       const gsap = this.$gsap
 
-      gsap.set('#introAnimDevice', { x: 65, y: 65 })
+      gsap.set('#devices', { x: 65, y: 65 })
       gsap.set('.tablet, .laptop, .desktop, .kiosk', {
         opacity: 0,
       })
@@ -240,6 +249,10 @@ export default {
   fill: none;
   stroke: var(--v-accent-base);
 }
+
+/* #devices {
+  filter: url('~assets/filters/glowFilter.svg#glow');
+} */
 
 .icons {
   height: 10vh;
