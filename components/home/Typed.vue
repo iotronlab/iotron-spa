@@ -1,12 +1,5 @@
 <template>
   <section class="text-center">
-    <h1 class="text-h4 text-sm-h3 mt-10 mt-lg-0">
-      <span> <b class="accent--text">ideas</b> that</span>
-      <br />
-      <span class="font-weight-black accent--text landing-text">connect</span>
-      <!-- <div class="text primary--text"></div> -->
-    </h1>
-
     <h1 class="text-h3 text-md-h1 font-weight-black" style="position: relative">
       <span>Progressive</span> <span> Web Agency~</span>
     </h1>
@@ -18,6 +11,12 @@
       <span class="text-h3 text-md-h1 font-weight-black mt-2"
         >Development.</span
       >
+    </h1>
+    <h1 class="text-h4 text-sm-h3 mt-10 mt-lg-0">
+      <span> <b class="accent--text">ideas</b> that</span>
+      <br />
+      <span class="font-weight-black accent--text landing-text">connect</span>
+      <!-- <div class="text primary--text"></div> -->
     </h1>
   </section>
 </template>

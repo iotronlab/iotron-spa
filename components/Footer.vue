@@ -2,9 +2,9 @@
   <v-container fluid>
     <v-row no-gutters justify="center">
       <v-col cols="12" lg="3">
-        <NuxtLink to="/"
-          ><v-img src="/logo.png" contain class="mx-auto" alt="iotron Logo"
-        /></NuxtLink>
+        <NuxtLink to="/">
+          <v-img src="/logo.webp" contain class="mx-auto" alt="iotron Logo" />
+        </NuxtLink>
         <h5 class="text-subtitle-2">
           iotron technologies pvt ltd<br />
           335, Dum Dum Road<br />Kolkata - 74<br />
@@ -31,19 +31,18 @@
               :href="social.url"
               target="_blank"
               rel="noopener"
-              ><v-icon :aria-label="social.name">{{
-                social.icon
-              }}</v-icon></v-btn
             >
+              <v-icon :aria-label="social.name">{{ social.icon }}</v-icon>
+            </v-btn>
           </v-row>
-        </section></v-col
-      >
+        </section>
+      </v-col>
 
       <v-col cols="12" lg="3" class="pa-2">
         <p v-for="(link, i) in navItems" :key="i" class="subtitle-1 mb-1">
           <NuxtLink :to="link.to">{{ link.title }}</NuxtLink>
-        </p></v-col
-      >
+        </p>
+      </v-col>
       <v-col cols="12" lg="3">
         <section>
           <p class="caption mb-1">Policies</p>
@@ -52,8 +51,8 @@
               {{ policy.title }}
             </NuxtLink>
           </p>
-        </section></v-col
-      >
+        </section>
+      </v-col>
     </v-row>
     <v-row no-gutters>
       <span class="mr-2">&copy; {{ new Date().getFullYear() }}</span>

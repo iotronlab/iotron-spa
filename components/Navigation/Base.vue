@@ -16,8 +16,8 @@
           aria-label="close-button"
           @click.stop="drawer = !drawer"
         >
-          <v-icon x-large>{{ icons.close }}</v-icon></v-btn
-        >
+          <v-icon x-large>{{ icons.close }}</v-icon>
+        </v-btn>
         <v-list class="pt-16">
           <v-list-item
             v-for="(item, i) in navItems"
@@ -38,9 +38,9 @@
       </v-sheet>
     </v-dialog>
     <v-app-bar fixed app flat>
-      <nuxt-link :to="{ name: 'index' }"
-        ><v-img src="/logo.png" max-width="220" contain
-      /></nuxt-link>
+      <nuxt-link :to="{ name: 'index' }">
+        <v-img src="/logo.webp" max-width="220" contain />
+      </nuxt-link>
       <v-spacer />
 
       <v-app-bar-nav-icon
@@ -48,10 +48,8 @@
         class="hidden-lg-and-up"
         @click.stop="drawer = !drawer"
       >
-        <v-icon slot="default" x-large>{{
-          icons.menu
-        }}</v-icon></v-app-bar-nav-icon
-      >
+        <v-icon slot="default" x-large>{{ icons.menu }}</v-icon>
+      </v-app-bar-nav-icon>
       <v-row no-gutters justify="end" align="center" class="hidden-md-and-down">
         <v-switch
           v-model="$vuetify.theme.dark"
@@ -129,8 +127,8 @@ export default {
     revealAnimations() {
       const gsap = this.gsap
       //   const GSDevTools = this.$GSDevTools
-      const navtl = gsap.timeline({ delay: 2 })
-      navtl.to('.btn-anime', { opacity: 1, stagger: 0.5 })
+      const navtl = gsap.timeline({ duration: 1 })
+      navtl.to('.btn-anime', { opacity: 1, stagger: 0.1 })
       //   GSDevTools.create({ animation: navtl, minimal: true })
     },
   },

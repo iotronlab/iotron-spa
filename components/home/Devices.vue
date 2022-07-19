@@ -2,7 +2,11 @@
   <section id="animation-wrap" class="py-16">
     <v-row no-gutters justify="center" align="center">
       <v-col cols="3" class="d-flex justify-center icons">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          filter="url(#glow)"
+        >
           <path
             d="M37.1 11a3 3 0 0 0-2.7 4.6l2 3.2A17 17 0 0 0 28 33a1 1 0 0 0 1 1h42a1 1 0 0 0 1-1 17 17 0 0 0-8.4-14.2l2-3.2a3 3 0 1 0-5.1-3.1L58 16.2a26.3 26.3 0 0 0-16.2 0l-2.3-3.9A3 3 0 0 0 37 11zm0 1a2 2 0 0 1 1.6 1l2.2 3.6c-1.2.5-2.5 1-3.6 1.7l-2-3.3a2 2 0 0 1 1.8-3zm25.8 0a2 2 0 0 1 1.8 3l-2 3.3-3.6-1.7 2.2-3.6a2 2 0 0 1 1.6-1zM50 17c10.7 0 19.2 6.7 19.9 15H30c.7-8.3 9.2-15 19.9-15zm-8.5 7c-.8 0-1.4.3-1.9.8a2.7 2.7 0 0 0 0 3.4c.5.5 1.1.8 1.9.8.8 0 1.4-.3 1.9-.8a2.7 2.7 0 0 0 0-3.4c-.5-.5-1.1-.8-1.9-.8zm17 0c-.8 0-1.4.3-1.9.8a2.7 2.7 0 0 0 0 3.4c.5.5 1.1.8 1.9.8.8 0 1.4-.3 1.9-.8a2.7 2.7 0 0 0 0-3.4c-.5-.5-1.1-.8-1.9-.8zm-17 1c.5 0 .9.2 1.1.5.3.2.4.6.4 1s-.1.8-.4 1c-.2.3-.6.5-1.1.5-.5 0-.9-.2-1.1-.5-.3-.2-.4-.6-.4-1s.1-.8.4-1c.2-.3.6-.5 1.1-.5zm17 0c.5 0 .9.2 1.1.5.3.2.4.6.4 1s-.1.8-.4 1c-.2.3-.6.5-1.1.5-.5 0-.9-.2-1.1-.5-.3-.2-.4-.6-.4-1s.1-.8.4-1c.2-.3.6-.5 1.1-.5zM20 37a5 5 0 0 0-5 5v19a5 5 0 0 0 5 5 5 5 0 0 0 5-5V42a5 5 0 0 0-5-5zm9 0a1 1 0 0 0-1 1v31a6 6 0 0 0 6 6h2v9a5 5 0 0 0 5 5 5 5 0 0 0 5-5v-9h8v9a5 5 0 0 0 5 5 5 5 0 0 0 5-5v-9h2a6 6 0 0 0 6-6V38a1 1 0 0 0-1-1H29zm51 0a5 5 0 0 0-5 5v19a5 5 0 0 0 5 5 5 5 0 0 0 5-5V42a5 5 0 0 0-5-5zm-60 2a3 3 0 0 1 3 3v19a3 3 0 0 1-3 3 3 3 0 0 1-3-3V42a3 3 0 0 1 3-3zm10 0h40v30a4 4 0 0 1-4 4h-2.8a1 1 0 0 0-.4 0h-7.6a1 1 0 0 0-.2 0 1 1 0 0 0-.2 0h-9.6a1 1 0 0 0-.4 0h-7.6a1 1 0 0 0-.2 0 1 1 0 0 0-.2 0H34a4 4 0 0 1-4-4V39zm50 0a3 3 0 0 1 3 3v19a3 3 0 0 1-3 3 3 3 0 0 1-3-3V42a3 3 0 0 1 3-3zm-46.5 3a.5.5 0 0 0-.5.5v22c0 3 2.5 5.5 5.5 5.5h18a.5.5 0 1 0 0-1h-18C36 69 34 67 34 64.5v-22a.5.5 0 0 0-.5-.5zm25 27a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm7 0a.5.5 0 1 0 0 1h1a.5.5 0 1 0 0-1h-1zM38 75h6v9a3 3 0 0 1-3 3 3 3 0 0 1-3-3v-9zm18 0h6v9a3 3 0 0 1-3 3 3 3 0 0 1-3-3v-9z"
           />
@@ -14,6 +18,7 @@
           xmlns="http://www.w3.org/2000/svg"
           xml:space="preserve"
           viewBox="0 0 52.2 52.2"
+          filter="url(#glow)"
         >
           <path
             d="M36.8 1V0l-1.1.1c-.1 0-10.3 1.2-11 12.6v1.1h1.1c.1 0 11.6-1 11-12.7zm-2 1.3c-.2 6.9-5.5 8.8-8 9.3 1-6.7 5.8-8.7 8-9.3z"
@@ -24,7 +29,11 @@
         </svg>
       </v-col>
       <v-col cols="3" class="d-flex justify-center icons">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          filter="url(#glow)"
+        >
           <path
             d="M85 14a1 1 0 0 0-.1 0l-39 5.6a1 1 0 0 0-.9 1V48a1 1 0 0 0 1 1h39a1 1 0 0 0 1-1V15a1 1 0 0 0-1-1zm-1 2.2V47H47V21.4l37-5.2zm-42 4a1 1 0 0 0-.1 0l-27 3.8a1 1 0 0 0-.9 1v23a1 1 0 0 0 1 1h27a1 1 0 0 0 1-1V21.1a1 1 0 0 0-1-1zm28.5 1h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm-3 .3-4 .6a.5.5 0 0 0 0 1l4-.6a.5.5 0 0 0 0-1zm-26.5.8V47H16V25.9l25-3.6zm19.5.2-10 1.5a.5.5 0 0 0 0 1l10-1.5a.5.5 0 0 0 0-1zm-23 3.3L21 28.2a2.5 2.5 0 0 0-2.1 2.4v12.9a.5.5 0 1 0 1 0V30.6c0-.7.5-1.3 1.3-1.4l16.3-2.4a.5.5 0 0 0 0-1zm43 6.2a.5.5 0 0 0-.5.5v11a.5.5 0 1 0 1 0v-11a.5.5 0 0 0-.5-.5zM15 51a1 1 0 0 0-1 1v23a1 1 0 0 0 .9 1l27 3.8a1 1 0 0 0 1.1-1V52a1 1 0 0 0-1-1H15zm31 0a1 1 0 0 0-1 1v27.4a1 1 0 0 0 .9 1l39 5.6a1 1 0 0 0 1.1-1V52a1 1 0 0 0-1-1H46zm-30 2h25v24.7l-25-3.6V53zm31 0h37v30.8l-37-5.2V53zm-27.5 3a.5.5 0 0 0-.5.5v12.9c0 1.2 1 2.3 2.1 2.4l16.3 2.4a.5.5 0 1 0 .2-1l-16.3-2.4c-.8 0-1.3-.7-1.3-1.4V56.5a.5.5 0 0 0-.5-.5zm61 0a.5.5 0 0 0-.5.5v21c0 1-.8 1.6-1.7 1.5l-27.7-4a.5.5 0 0 0-.2 1l27.7 4c1.5.2 2.9-1 2.9-2.5v-21a.5.5 0 0 0-.5-.5z"
           />
@@ -38,30 +47,12 @@
         width="100%"
         stroke-width="1"
         viewBox="0 0 300 350"
+        filter="url(#glow)"
       >
-        <defs>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="10" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        <g id="devices" filter="url(#glow)">
-          <path
-            fill="#41bbf6"
-            stroke="#02f4c8"
-            d="M104 122H74v-7h30v7z"
-            class="adShape1"
-          />
+        <g id="devices">
+          <path fill="#2dd4bf" d="M104 122H74v-7h30v7z" class="adShape1" />
           <path stroke="none" d="M125 95H53V77h72v18z" class="adShape2" />
-          <path
-            fill="#0d9488"
-            stroke="#02f4c8"
-            d="M144 137.3h-27.3V114H144v23.3z"
-            class="adShape3"
-          />
+          <path d="M144 137.3h-27.3V114H144v23.3z" class="ad-shape-3" />
           <path stroke="none" d="M144 105.7H36V91h108v14.7z" class="adShape4" />
           <path
             stroke="none"
@@ -163,12 +154,43 @@ export default {
     startAnimation() {
       const gsap = this.$gsap
 
-      gsap.set('#devices', { x: 65, y: 65 })
-      gsap.set('.tablet, .laptop, .desktop, .kiosk', {
-        opacity: 0,
+      function weightedRandom(collection, ease) {
+        return gsap.utils.pipe(
+          Math.random, // random number between 0 and 1
+          gsap.parseEase(ease), // apply the ease
+          gsap.utils.mapRange(0, 1, -0.5, collection.length - 0.5), // map to the index range of the array, stretched by 0.5 each direction because we'll round and want to keep distribution (otherwise linear distribution would be center-weighted slightly)
+          gsap.utils.snap(1), // snap to the closest integer
+          (i) => collection[i] // return that element from the array
+        )
+      }
+
+      const colors = [
+        '#02f4c8',
+        '#41bbf6',
+        '#2dd4bf',
+        '#34d399',
+        '#06b6d4',
+        '#0ea5e9',
+      ]
+      const randomColor = weightedRandom(colors, 'linear')
+
+      const icons = document.querySelectorAll('.icons svg')
+      gsap.set([icons], {
+        fill: 'none',
+        stroke: randomColor,
       })
-      const icons = document.querySelectorAll('.icons path')
-      console.log(icons)
+      gsap.set('.ad-shape-3', {
+        opacity: 1,
+      })
+      gsap.set('.adShape1', {
+        fill: randomColor,
+      })
+      gsap.set(
+        '.phone, .tablet, .laptop, .desktop, .kiosk, .ad-shape-3, .adShape1',
+        {
+          stroke: randomColor,
+        }
+      )
 
       gsap
         .timeline({
@@ -184,12 +206,12 @@ export default {
         })
         .from('.icons path', {
           drawSVG: 0,
-          strokeWidth: '1px',
+          strokeWidth: '0.1rem',
           duration: 4,
         })
-        .to('.icons path', {
-          fill: '#0d9488',
-          // strokeWidth: '2px',
+        .to(icons, {
+          fill: randomColor,
+          strokeWidth: '0.05rem',
         })
         .to('.typed span', {
           duration: 4,
@@ -210,7 +232,7 @@ export default {
           'laptop'
         )
         .to('.adShape1', { morphSVG: '.adShape4' }, 'laptop')
-        .from('.adShape3', { scale: 0, opacity: 0 }, 'laptop')
+        .from('.ad-shape-3', { scale: 0, opacity: 0 }, 'laptop')
 
         .add('desktop', 3)
         .to('.phone1', { morphSVG: '.desktop1' }, 'desktop')
@@ -222,7 +244,7 @@ export default {
           'desktop'
         )
         .to('.adShape1', { morphSVG: '.adShape6' }, 'desktop')
-        .to('.adShape3', { morphSVG: '.adShape5' }, 'desktop')
+        .to('.ad-shape-3', { morphSVG: '.adShape5' }, 'desktop')
 
         .add('kiosk', 4.5)
         .to('.phone1', { morphSVG: '.kiosk1' }, 'kiosk')
@@ -231,7 +253,7 @@ export default {
         .to('.laptop5', { morphSVG: '.kiosk3', y: 0 }, 'kiosk')
         .to('.adShape1', { morphSVG: '.adShape8' }, 'kiosk')
         .to(
-          '.adShape3',
+          '.ad-shape-3',
           { morphSVG: '.adShape7', ease: 'back.inOut(0.6)' },
           'kiosk'
         )
@@ -250,15 +272,21 @@ export default {
   stroke: var(--v-accent-base);
 }
 
-/* #devices {
-  filter: url('~assets/filters/glowFilter.svg#glow');
-} */
+#devices {
+  transform: translateX(60px) translateY(40px);
+}
+
+.ad-shape-3,
+.tablet,
+.laptop,
+.desktop,
+.kiosk {
+  opacity: 0;
+}
 
 .icons {
   height: 10vh;
-  fill: none;
+  fill: var(--v-primary-base);
   stroke: var(--v-accent-base);
-
-  /* stroke-width: 10px; */
 }
 </style>
