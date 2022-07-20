@@ -46,8 +46,9 @@
         </p>
       </v-col>
       <v-col cols="12" lg="3">
-        <NuxtLink to="/verify"> Verify Certificates </NuxtLink>
-        <nuxt-link to="/"> Verify Certificates</nuxt-link>
+        <p>
+          <NuxtLink to="/verify"> Verify Certificates </NuxtLink>
+        </p>
         <section>
           <!-- <p class="caption mb-1">Policies</p>
           <p v-for="(policy, i) in policies" :key="i" class="subtitle-1 mb-1">
