@@ -24,7 +24,7 @@
 
     <v-row no-gutters justify="center">
       <v-col v-for="(item, i) in items" :key="i" cols="12" sm="6" class="pa-1">
-        <v-card :class="{ 'on-hover': hover }" rounded="xl">
+        <v-card rounded="xl">
           <!-- <div class="d-flex justify-center pa-2">
                 <ServicesAnimation :svg="item.img" />
               </div> -->
