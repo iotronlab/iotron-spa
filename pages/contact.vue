@@ -1,5 +1,6 @@
 <template>
   <v-container class="main-container">
+    <ContactAnimation />
     <div class="container">
       <p class="text-center header" style="margin: 0 2vh">Contact Us!</p>
       <v-divider class="mb-4"></v-divider>
@@ -44,13 +45,12 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import VueParticles from 'vue-particles'
 import { mdiPhone, mdiEmail } from '@mdi/js'
-import ContactForm from '../components/contact/contactForm.vue'
+// import ContactForm from '../components/contact/contactForm.vue'
+
 export default {
   name: 'ContactPage',
-  components: { ContactForm },
+  // components: { ContactForm },
   data() {
     return {
       icons: {
@@ -60,8 +60,6 @@ export default {
     }
   },
 }
-
-Vue.use(VueParticles)
 </script>
 
 <style scoped>
