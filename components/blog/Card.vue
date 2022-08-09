@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'BlogPage',
+  name: 'BlogCard',
 }
 </script>

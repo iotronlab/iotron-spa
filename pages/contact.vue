@@ -1,46 +1,38 @@
 <template>
-  <v-container class="main-container">
+  <v-container>
     <ContactAnimation />
-    <div class="container">
-      <p class="text-center header" style="margin: 0 2vh">Contact Us!</p>
-      <v-divider class="mb-4"></v-divider>
-      <div>
-        <v-row no-gutters justify="center">
-          <v-col cols="12" lg="5">
-            <div class="container">
-              <div>
-                <p style="font-size: 3vw; padding: 10px 0">
-                  We provide creative, affordable and best in class business
-                  solutions.
-                </p>
-                <p>
-                  Get in touch to get a custom tailor made website just for your
-                  needs!
-                </p>
-              </div>
-              <v-divider></v-divider>
-              <address>
-                Visit us at: <br />
-                97, Ajay Nagar, Melabagan Estate,
-                <br />Basak Bagan, Kolkata, <br />West Bengal 700074
-              </address>
-              <a href="tel:+91 7439 790 770">
-                <v-icon>{{ icons.phone }} </v-icon>
-                &nbsp;+91 7439 790 770
-              </a>
-              <a href="mailto:contactus@iaa.org.in">
-                <v-icon>{{ icons.email }}</v-icon>
-                &nbsp;contactus@iaa.org.in
-              </a>
-            </div>
-            <v-divider></v-divider>
-          </v-col>
-          <v-col cols="12" lg="7">
-            <ContactForm />
-          </v-col>
-        </v-row>
-      </div>
-    </div>
+
+    <v-divider class="mb-4"></v-divider>
+
+    <v-row no-gutters justify="center" class="text-center text-lg-right">
+      <v-col cols="12" lg="3">
+        <h1 class="text-h2">Contact US</h1>
+
+        <v-divider class="my-2"></v-divider>
+        <h2 class="text-h6 mb-4">We are based in the city of joy!</h2>
+        <address>
+          iotron technologies pvt ltd<br />
+          335, Dum Dum Road<br />Kolkata - 74<br />
+          WB, India.
+        </address>
+        <v-divider class="my-2"></v-divider>
+        <a href="tel:+91 9046632101">
+          <v-icon>{{ icons.phone }} </v-icon>
+          &nbsp;+91 9046632101
+        </a>
+        (Mon-Sat 10am-6pm IST)
+        <br />
+        <a href="mailto:contactus@iotron.co">
+          <v-icon>{{ icons.email }}</v-icon>
+          &nbsp;contactus@iotron.co
+        </a>
+        <v-divider class="my-2"></v-divider>
+      </v-col>
+
+      <v-col cols="12" sm="10" lg="7">
+        <ContactForm />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -61,28 +53,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.main-container {
-  margin: 2vh auto;
-}
-
-.header {
-  font-size: 6vh;
-}
-
-.text-center {
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  justify-self: center;
-  text-align: center;
-  vertical-align: middle;
-}
-
-@media screen and (max-width: 900px) {
-  .container {
-    text-align: center;
-  }
-}
-</style>
