@@ -7,18 +7,15 @@
       <LazyFetchError />
     </section>
     <!-- loads on api call success -->
-    <section v-else>
+    <section v-else style="min-height: 90vh">
       <v-row no-gutters justify="center" align="center" class="mt-4">
-        <v-col cols="12" sm="6" class="d-flex justify-center justify-lg-start">
-          <LazyBreadcrumb :breadcrumb-items="breadcrumbItems" />
-          <h1 class="text-h3 font-weight-black">Blogs</h1>
-          <!-- <h2 class="el text-h6">use filter to shortlist projects</h2> -->
-        </v-col>
+        <LazyBreadcrumb :breadcrumb-items="breadcrumbItems" />
 
-        <v-btn class="ma-2" text>
+        <v-btn class="mx-2" text>
           Filter <v-icon right>{{ icons.filter }}</v-icon>
         </v-btn>
       </v-row>
+      <h1 class="text-h4 font-weight-medium text-center">Blogs</h1>
       <section v-if="blogs.length < 1">
         <v-card height="480" rounded="xl" class="text-center">
           <h1 class="text-body-1 pa-2 pt-4">
@@ -28,14 +25,14 @@
       </section>
       <section v-else>
         <v-col cols="12" lg="10" class="mx-auto pa-0 mt-16">
-          <!-- <masonry :cols="{ default: 2, 991: 2, 575: 1 }" :gutter="10">
+          <!-- <masonry :cols="{ default: 3, 991: 2, 575: 1 }" :gutter="10">
 
-            <LazyPortfolioCard v-for="(portfolio, i) in blogs" :key="i" :portfolio="portfolio" />
+            <LazyBlogCard v-for="(blog, i) in blogs" :key="i" :blog="blog" />
 
           </masonry> -->
 
-          <v-row>
-            <v-col v-for="(blog, i) in blogs" :key="i" lg="6">
+          <v-row no-gutters justify="center">
+            <v-col v-for="(blog, i) in blogs" :key="i" lg="3">
               <LazyBlogCard :blog="blog" />
             </v-col>
           </v-row>
@@ -85,7 +82,7 @@ export default {
           to: '/',
         },
         {
-          text: 'Blog',
+          text: 'Blogs',
           disabled: true,
         },
       ],

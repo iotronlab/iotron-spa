@@ -14,7 +14,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Progressive Web Agency',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -38,7 +42,6 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/google-fonts',
-    'nuxt-animejs',
     'nuxt-gsap-module',
   ],
 
@@ -49,7 +52,6 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
     // { src: '~/plugins/vue-masonry', ssr: false },
   ],
 
@@ -139,8 +141,6 @@ export default {
     },
   },
 
-  // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
   loadingIndicator: {
     name: 'wandering-cubes',
     color: '#02f4c8',

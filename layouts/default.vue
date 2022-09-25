@@ -39,7 +39,7 @@ export default {
         {
           icon: '',
           title: 'Blogs',
-          to: '/blog',
+          to: '/blogs',
         },
         {
           icon: '',
