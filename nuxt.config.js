@@ -1,5 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
-
+import minifyTheme from 'minify-css-string'
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -161,28 +160,26 @@ export default {
         //   get: (key) => localStorage.getItem(key),
         //   set: (key, value) => localStorage.setItem(key, value),
         // },
-        // minifyTheme,
+        minifyTheme,
       },
       themes: {
         dark: {
           primary: '#41bbf6',
           accent: '#02f4c8',
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+          secondary: 'f9b31e',
+          info: '#6366F1',
+          warning: '#F59E0B',
+          error: '#EF4444',
+          success: '#9FE2BF',
         },
         light: {
-          // primary: '#0369a1',
-          // accent: '#0f766e',
           primary: '#41bbf6',
           accent: '#0d9488',
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+          secondary: 'f9b31e',
+          info: '#6366F1',
+          warning: '#F59E0B',
+          error: '#EF4444',
+          success: '#9FE2BF',
         },
       },
     },
@@ -196,7 +193,7 @@ export default {
     },
     optimization: {
       splitChunks: {
-        // maxSize: 200000,
+        maxSize: 200000,
         cacheGroups: {
           styles: {
             name: 'styles',
@@ -206,6 +203,9 @@ export default {
           },
         },
       },
+    },
+    analyze: {
+      analyzerMode: 'static',
     },
   },
 }

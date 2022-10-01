@@ -1,14 +1,14 @@
 <template>
   <v-container>
     <section v-if="$fetchState.pending">
-      <Loading />
+      <Loading message="loading blog..." />
     </section>
 
     <section v-else>
       <Breadcrumb :breadcrumb-items="breadcrumbItems" />
 
       <v-divider class="my-2"></v-divider>
-      <h1 class="text-h4 text-center">Case Study - {{ portfolio.title }}</h1>
+      <h1 class="text-h4 text-center">{{ blog.title }}</h1>
       <v-divider class="my-2"></v-divider>
     </section>
     <!-- <Footer /> -->
@@ -21,7 +21,7 @@ import { mdiShareVariantOutline } from '@mdi/js'
 export default {
   data() {
     return {
-      portfolio: null,
+      blog: null,
       icon: {
         share: mdiShareVariantOutline,
       },
@@ -32,9 +32,9 @@ export default {
           to: '/',
         },
         {
-          text: 'Portfolios',
+          text: 'Blogs',
           disabled: false,
-          to: '/portfolio',
+          to: '/blogs',
           exact: true,
         },
         {
@@ -48,12 +48,12 @@ export default {
 
   // head() {
   //   return {
-  //     title: this.portfolio.name,
+  //     title: this.blog.name,
   //     meta: [
   //       {
   //         hid: 'description',
   //         name: 'description',
-  //         content: this.portfolio.project_description,
+  //         content: this.blog.project_description,
   //       },
   //     ],
   //   }
@@ -64,8 +64,7 @@ export default {
       await this.$axios
         .$get(`blogs/${this.$route.params.slug}`)
         .then((res) => {
-          this.portfolio = res.data
-          console.log(res)
+          this.blog = res.data
         })
         .catch((err) => {
           this.errorMessage = err
@@ -79,8 +78,8 @@ export default {
   methods: {
     async share() {
       const shareData = {
-        title: this.portfolio.name,
-        text: this.portfolio.project_description,
+        title: this.blog.title,
+        text: this.blog.author,
         url: 'https://www.jetpax.org' + this.$route.path,
       }
       try {
