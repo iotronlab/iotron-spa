@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="justify-center" fluid>
     <section v-if="$fetchState.pending">
       <Loading message="loading blog..." />
     </section>
@@ -7,23 +7,83 @@
     <section v-else>
       <Breadcrumb :breadcrumb-items="breadcrumbItems" />
 
-      <v-divider class="my-2"></v-divider>
-      <h1 class="text-h4 text-center">{{ blog.title }}</h1>
-      <v-divider class="my-2"></v-divider>
+      <v-divider class="my-2 mb-8"></v-divider>
+
+      <v-row no-gutters justify="center">
+        <v-col cols="12" md="9">
+          <h5 class="overline mt-4">Posted by {{ blog.author }}</h5>
+          <v-hover v-slot="{ hover }">
+            <h1
+              class="text-h2 text-capitalize"
+              :class="{ 'text-decoration-underline': hover }"
+            >
+              {{ blog.title }}
+            </h1>
+          </v-hover>
+          <v-list-item class="my-4 font-weight-light pl-1"
+            ><v-icon class="mr-2 mb-1">{{ icon.eye }}</v-icon>
+            {{ blog.views }} Views
+            <v-btn
+              rounded
+              outlined
+              class="mx-6 text-capitalize"
+              @click="share()"
+              ><v-icon class="mr-4">{{ icon.share }}</v-icon
+              >Share</v-btn
+            >
+          </v-list-item>
+          <v-spacer class="my-8"></v-spacer>
+          <v-img
+            :src="
+              blog.banner
+                ? blog.banner
+                : 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg'
+            "
+            max-width="80vw"
+            contain
+            class="my-4"
+          >
+          </v-img>
+          <v-card-text class="text-h6 my-8 white--text">{{
+            blog.content
+          }}</v-card-text>
+        </v-col>
+
+        <!-- <v-col cols="3" class="hidden-md-and-down">
+
+          <v-card-title class="my-0 py-0 text-h5 mx-8">Related blogs 
+            <v-btn rounded outlined class="text-capitalize ml-6" to="/blogs">View all</v-btn>
+          </v-card-title>
+          <div v-if="postAll.length > 1">
+            <div v-for="(blogAll, i) in postAll.slice(0, 3)" :key="i" lg="3">
+              <LazyBlogCard :blog="blogAll" />
+            </div>
+          </div>
+          <div v-else>
+            <h1 class="text-body-1 pa-2 pt-4">
+              No related blogs.
+            </h1>
+          </div>
+
+        </v-col> -->
+      </v-row>
     </section>
     <!-- <Footer /> -->
   </v-container>
 </template>
 
 <script>
-import { mdiShareVariantOutline } from '@mdi/js'
+import { mdiShareVariantOutline, mdiEye } from '@mdi/js'
 
 export default {
   data() {
     return {
       blog: null,
+      postAll: [],
+      paramQuery: null,
       icon: {
         share: mdiShareVariantOutline,
+        eye: mdiEye,
       },
       breadcrumbItems: [
         {
@@ -75,6 +135,10 @@ export default {
     }
   },
 
+  created() {
+    this.fetchAll()
+  },
+
   methods: {
     async share() {
       const shareData = {
@@ -85,7 +149,22 @@ export default {
       try {
         await navigator.share(shareData)
       } catch (err) {
-        console.log(err)
+        // console.log(err)
+      }
+    },
+
+    async fetchAll() {
+      try {
+        await this.$axios
+          .$get('blogs', { params: { page: 1 } })
+          .then((res) => {
+            this.postAll = res.data
+          })
+          .catch((err) => {
+            this.paramQuery = err
+          })
+      } catch (error) {
+        // this.$sentry.captureException(new Error(error))
       }
     },
   },

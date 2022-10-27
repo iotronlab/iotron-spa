@@ -11,11 +11,11 @@
       <v-row no-gutters justify="center" align="center" class="mt-4">
         <LazyBreadcrumb :breadcrumb-items="breadcrumbItems" />
 
-        <v-btn class="mx-2" text>
+        <v-btn class="mx-8" text rounded outlined>
           Filter <v-icon right>{{ icons.filter }}</v-icon>
         </v-btn>
       </v-row>
-      <h1 class="text-h4 font-weight-medium text-center">Blogs</h1>
+      <h1 class="text-h4 font-weight-medium text-center my-8">Blogs</h1>
       <section v-if="blogs.length < 1">
         <v-card height="480" rounded="xl" class="text-center">
           <h1 class="text-body-1 pa-2 pt-4">
@@ -24,7 +24,7 @@
         </v-card>
       </section>
       <section v-else>
-        <v-col cols="12" lg="10" class="mx-auto pa-0 mt-16">
+        <v-col cols="12" lg="10" class="mx-auto pa-0 mt-16 mb-8">
           <!-- <masonry :cols="{ default: 3, 991: 2, 575: 1 }" :gutter="10">
 
             <LazyBlogCard v-for="(blog, i) in blogs" :key="i" :blog="blog" />
@@ -39,14 +39,17 @@
         </v-col>
 
         <div class="text-center">
-          <v-pagination
-            v-model="pageData.current_page"
-            :length="pageData.last_page"
-            :next-icon="icons.nextArrow"
-            :prev-icon="icons.prevArrow"
-            total-visible="10"
-            @input="updateQuery(pageData.current_page)"
-          ></v-pagination>
+          <v-card class="tile flat ma-0 py-12">
+            <v-pagination
+              v-model="pageData.current_page"
+              :length="pageData.last_page"
+              :next-icon="icons.nextArrow"
+              :prev-icon="icons.prevArrow"
+              total-visible="10"
+              circle
+              @input="updateQuery(pageData.current_page)"
+            ></v-pagination>
+          </v-card>
         </div>
       </section>
     </section>
@@ -68,6 +71,7 @@ export default {
       blogs: [],
       pageData: {},
       errorMessage: null,
+      paramQuery: null,
       isActive: [],
       icons: {
         nextArrow: mdiArrowRight,
@@ -95,6 +99,7 @@ export default {
         .then((res) => {
           this.blogs = res.data
           this.pageData = res.meta
+          this.paramQuery = this.$route.query
         })
         .catch((err) => {
           this.errorMessage = err
