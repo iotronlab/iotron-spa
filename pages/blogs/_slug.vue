@@ -48,25 +48,25 @@
             blog.content
           }}</v-card-text>
         </v-col>
-
-        <!-- <v-col cols="3" class="hidden-md-and-down">
-
-          <v-card-title class="my-0 py-0 text-h5 mx-8">Related blogs 
-            <v-btn rounded outlined class="text-capitalize ml-6" to="/blogs">View all</v-btn>
-          </v-card-title>
-          <div v-if="postAll.length > 1">
-            <div v-for="(blogAll, i) in postAll.slice(0, 3)" :key="i" lg="3">
-              <LazyBlogCard :blog="blogAll" />
-            </div>
-          </div>
-          <div v-else>
-            <h1 class="text-body-1 pa-2 pt-4">
-              No related blogs.
-            </h1>
-          </div>
-
-        </v-col> -->
       </v-row>
+
+      <v-divider class="mx-4 my-8"></v-divider>
+
+      <v-col cols="12" lg="10" class="mx-auto pa-0 my-16">
+        <v-card-title class="my-4 text-h5"
+          >Related blogs
+          <v-btn rounded outlined class="text-capitalize ml-6" to="/blogs"
+            >View all</v-btn
+          >
+        </v-card-title>
+        <v-row v-if="postAll.length > 1" no-gutters justify="center">
+          <v-col v-for="(blogAll, i) in postAll.slice(0, 4)" :key="i" lg="3">
+            <LazyBlogCard :blog="blogAll" />
+          </v-col>
+        </v-row>
+      </v-col>
+
+      <v-divider class="mx-4 my-8"></v-divider>
     </section>
     <!-- <Footer /> -->
   </v-container>
