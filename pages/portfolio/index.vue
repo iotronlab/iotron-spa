@@ -34,8 +34,12 @@
 
           </masonry> -->
 
-          <v-row>
-            <v-col v-for="(portfolio, i) in portfolios" :key="i" lg="6">
+          <v-row class="d-flex justify-center">
+            <v-col
+              v-for="(portfolio, i) in portfolios"
+              :key="i"
+              class="col-10 col-md-5"
+            >
               <LazyPortfolioCard :portfolio="portfolio" />
             </v-col>
           </v-row>

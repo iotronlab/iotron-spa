@@ -7,7 +7,97 @@
     <section v-else>
       <Breadcrumb :breadcrumb-items="breadcrumbItems" />
 
-      <v-divider class="my-2"></v-divider>
+      <v-sheet
+        color="sucess"
+        height="100%"
+        width="100%"
+        rounded="xl"
+        class="mx-auto pa-2"
+      >
+        <v-card class="mx-auto" max-width="100%" max-height="auto" rounded="xl">
+          <v-img
+            :aspect-ratio="16 / 9"
+            width="100%"
+            src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+          ></v-img>
+
+          <v-card-title>
+            <h1 class="text-h4 text-center">
+              Case Study - {{ portfolio.name }}
+            </h1>
+          </v-card-title>
+
+          <v-card-text>
+            <v-row>
+              <v-col class="col-12">
+                <div>
+                  <h2 class="font-weight-bold">Name</h2>
+                  <h3 class="subtitle-1">{{ portfolio.name }}</h3>
+                </div>
+              </v-col>
+
+              <v-col class="col-12">
+                <div>
+                  <h2 class="font-weight-bold">Client Brief</h2>
+                  <h3 class="subtitle-1">{{ portfolio.client_brief }}</h3>
+                </div>
+              </v-col>
+
+              <v-col class="col-12">
+                <div>
+                  <h2 v-if="portfolio.client_location" class="font-weight-bold">
+                    Client Location
+                  </h2>
+                  <h3 v-if="portfolio.client_location" class="subtitle-1">
+                    {{ portfolio.client_location }}
+                  </h3>
+                </div>
+              </v-col>
+
+              <v-col class="col-12">
+                <div>
+                  <h2 class="font-weight-bold">Project Description</h2>
+                  <h3 class="subtitle-1">
+                    {{ portfolio.project_description }}
+                  </h3>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-text>
+
+          <v-divider class="mx-4"></v-divider>
+
+          <v-col v-if="portfolio.tools != null" class="col-12">
+            <h2 class="font-weight-bold">Tools</h2>
+            <v-chip v-for="(tool, i) in 3" :key="i" outlined class="ma-1">
+              tool</v-chip
+            >
+          </v-col>
+          <v-col v-if="portfolio.services != null" class="col-12">
+            <h2 class="font-weight-bold">Services</h2>
+            <v-chip v-for="(service, i) in 4" :key="i" outlined class="ma-1"
+              >service
+            </v-chip>
+          </v-col>
+          <v-col v-if="portfolio.external_url != null" class="col-12"> </v-col>
+          <v-card-actions>
+            <h2 class="font-weight-bold">External Link</h2>
+            <v-btn
+              v-for="(url, i) in 2"
+              :key="i"
+              color="deep-purple lighten-2"
+              class="ma-1 btn-creator"
+              :href="url.url"
+              target="_href"
+              rounded
+              dark
+              >url</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </v-sheet>
+
+      <!-- <v-divider class="my-2"></v-divider>
       <h1 class="text-h4 text-center">Case Study - {{ portfolio.name }}</h1>
       <v-divider class="my-2"></v-divider>
 
@@ -79,8 +169,8 @@
           <PostImages :images="portfolio.images"
         /></v-col>
       </v-row>
-      <v-divider class="my-2"></v-divider>
-      <PostCard :posts="portfolio.posts" />
+      <v-divider class="my-2"></v-divider> -->
+      <!-- <PostCard :posts="portfolio.posts" /> -->
     </section>
     <!-- <Footer /> -->
   </v-container>
