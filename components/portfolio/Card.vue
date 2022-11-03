@@ -74,7 +74,6 @@
     <h1 class="text-h5">{{ portfolio.name }}</h1>
   </div> -->
 </template>
-
 <script>
 import { mdiEye } from '@mdi/js'
 export default {

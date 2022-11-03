@@ -16,6 +16,7 @@
       >
         <v-card class="mx-auto" max-width="100%" max-height="auto" rounded="xl">
           <v-img
+            v-if="portfolio.image != null"
             :aspect-ratio="16 / 9"
             width="100%"
             src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
@@ -69,32 +70,49 @@
 
           <v-col v-if="portfolio.tools != null" class="col-12">
             <h2 class="font-weight-bold">Tools</h2>
-            <v-chip v-for="(tool, i) in 3" :key="i" outlined class="ma-1">
-              tool</v-chip
+            <v-chip
+              v-for="(tool, i) in portfolio.tools"
+              :key="i"
+              outlined
+              class="ma-1"
+            >
+              {{ tool }}</v-chip
             >
           </v-col>
           <v-col v-if="portfolio.services != null" class="col-12">
             <h2 class="font-weight-bold">Services</h2>
-            <v-chip v-for="(service, i) in 4" :key="i" outlined class="ma-1"
-              >service
+            <v-chip
+              v-for="(service, i) in portfolio.services"
+              :key="i"
+              outlined
+              class="ma-1"
+              >{{ service }}
             </v-chip>
           </v-col>
-          <v-col v-if="portfolio.external_url != null" class="col-12"> </v-col>
           <v-card-actions>
-            <h2 class="font-weight-bold">External Link</h2>
-            <v-btn
-              v-for="(url, i) in 2"
-              :key="i"
-              color="deep-purple lighten-2"
-              class="ma-1 btn-creator"
-              :href="url.url"
-              target="_href"
-              rounded
-              dark
-              >url</v-btn
-            >
+            <v-col v-if="portfolio.external_url != null" class="col-12">
+              <h2 class="font-weight-bold">External Link</h2>
+              <v-btn
+                v-for="(url, i) in portfolio.external_url"
+                :key="i"
+                class="ma-1 btn-creator"
+                :href="url.url"
+                target="_href"
+                rounded
+                dark
+                >{{ url.site }}</v-btn
+              >
+            </v-col>
+            <v-col class="col-12 pl-0">
+              <v-btn class="btn-agency" outlined @click="share"
+                ><v-icon left>{{ icon.share }}</v-icon> Share</v-btn
+              >
+            </v-col>
           </v-card-actions>
         </v-card>
+        <v-col class="col-12 col-lg-8">
+          <PostImages :images="portfolio.images"
+        /></v-col>
       </v-sheet>
 
       <!-- <v-divider class="my-2"></v-divider>
